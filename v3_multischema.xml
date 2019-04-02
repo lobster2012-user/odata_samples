@@ -9,7 +9,7 @@
         <Property Name="Name" Type="Edm.String" Nullable="true"/>
         <Property Name="Concurrency" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed"/>
       </EntityType>
-        <EntityType Name="Supplier2" BaseType="ODataDemo.Supplier2">
+        <EntityType Name="Supplier2" BaseType="ODataDemo.Supplier">
                 <Property Name="Code" Type="Edm.String" Nullable="true"></Property>
       </EntityType>
     </Schema>
@@ -22,7 +22,7 @@
         <Property Name="Name" Type="Edm.String" Nullable="true"/>
         <Property Name="Concurrency" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed"/>
      </EntityType>
-      <EntityType Name="Supplier2" BaseType="ODataDemo2.Supplier2">
+      <EntityType Name="Supplier2" BaseType="ODataDemo2.Supplier">
                 <Property Name="Code" Type="Edm.String" Nullable="true"></Property>
       </EntityType>
     </Schema>
