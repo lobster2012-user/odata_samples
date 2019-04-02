@@ -1,14 +1,6 @@
 <edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
   <edmx:DataServices xmlns:metadata="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata metadata:DataServiceVersion="3.0">
     <Schema xmlns="http://schemas.microsoft.com/ado/2007/05/edm" Namespace="ODataDemo">
-      <EntityType Name="Category">
-        <Key>
-          <PropertyRef Name="ID"/>
-        </Key>
-        <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="Name" Type="Edm.String" Nullable="true"/>
-        <NavigationProperty Name="Products" Relationship="ODataDemo.Product_Category_Category_Products"FromRole="Category_Products" ToRole="Product_Category"/>
-      </EntityType>
       <EntityType Name="Supplier">
         <Key>
           <PropertyRef Name="ID"/>
@@ -19,17 +11,11 @@
         <Property Name="Concurrency" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed"/>
         <NavigationProperty Name="Products" Relationship="ODataDemo.Product_Supplier_Supplier_Products" FromRole="Supplier_Products" ToRole="Product_Supplier"/>
       </EntityType>
-      </EntityContainer>
+        <EntityType Name="Supplier2" BaseType="ODataDemo.Supplier2">
+                <Property Name="Code" Type="Edm.String" Nullable="true"></Property>
+      </EntityType>
     </Schema>
     <Schema xmlns="http://schemas.microsoft.com/ado/2007/05/edm" Namespace="ODataDemo2">
-      <EntityType Name="Category">
-        <Key>
-          <PropertyRef Name="ID"/>
-        </Key>
-        <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
-        <Property Name="Name" Type="Edm.String" Nullable="true"/>
-        <NavigationProperty Name="Products" Relationship="ODataDemo.Product_Category_Category_Products"FromRole="Category_Products" ToRole="Product_Category"/>
-      </EntityType>
       <EntityType Name="Supplier">
         <Key>
           <PropertyRef Name="ID"/>
@@ -38,9 +24,10 @@
         <Property Name="Name" Type="Edm.String" Nullable="true"/>
         <Property Name="Address" Type="ODataDemo.Address" Nullable="false"/>
         <Property Name="Concurrency" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed"/>
-        <NavigationProperty Name="Products" Relationship="ODataDemo.Product_Supplier_Supplier_Products" FromRole="Supplier_Products" ToRole="Product_Supplier"/>
+     </EntityType>
+      <EntityType Name="Supplier2" BaseType="ODataDemo2.Supplier2">
+                <Property Name="Code" Type="Edm.String" Nullable="true"></Property>
       </EntityType>
-      </EntityContainer>
     </Schema>
   </edmx:DataServices>
 </edmx:Edmx>
